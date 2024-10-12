@@ -2,16 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface HomeProps {
-  setImage: React.Dispatch<React.SetStateAction<string | null>>;
+  setFormData: React.Dispatch<React.SetStateAction<FormData | null>>;
 }
 
-const Home: React.FC<HomeProps> = ({ setImage }) => {
+const Home: React.FC<HomeProps> = ({ setFormData }) => {
   const navigate = useNavigate();
 
   const captureImage = () => {
     // Simulating image capture
-    const capturedImage = '/api/placeholder/400/300';
-    setImage(capturedImage);
+    //const capturedImage = '/api/placeholder/400/300';
+    setFormData(new FormData());
     navigate('/display');
   };
 

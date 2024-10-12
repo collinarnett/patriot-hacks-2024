@@ -5,12 +5,12 @@ import Results from './components/Results';
 import "./App.css";
 
 const App: React.FC = () => {
-  const [image, setImage] = useState<string | null>(null);
+  const [formData, setFormData] = useState<FormData | null>(null);
 
   return (
     <Routes>
-      <Route path="/" element={<Home setImage={setImage} />} />
-      <Route path="/display" element={<Results image={image} />} />
+      <Route path="/" element={<Home setFormData={setFormData} />} />
+      <Route path="/display" element={<Results formData={formData} />} />
     </Routes>
   );
 };
