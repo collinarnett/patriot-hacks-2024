@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/results",
-        element: <Results formData={null} />, // Pass null as initial value
+        element: <Results formData={null} />,
       },
     ],
   },
