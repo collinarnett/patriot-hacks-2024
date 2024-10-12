@@ -5,7 +5,7 @@ export default function Layout() {
     <div>
       <header>
         <nav>
-          <Link to="/">Add Image</Link>
+          <Link to="/">Logo</Link>
         </nav>
       </header>
       <div className="flex items-center justify-center">
