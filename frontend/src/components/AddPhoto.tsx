@@ -55,3 +55,4 @@ const AddPhoto: React.FC<HomeProps> = ({ setImage }) => {
 }
 
 export default AddPhoto;
+
