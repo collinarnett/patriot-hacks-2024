@@ -1,14 +1,18 @@
 import { useState, useRef, useCallback } from "react";
 import Webcam from "react-webcam";
 
+interface HomeProps {
+  setImage: (image: string) => void;
+}
+
 const videoConstraints = {
   width: 1280,
   height: 720,
   facingMode: "user",
+  
 };
 
-function AddPhoto() {
-  const [image, setImage] = useState(0);
+const AddPhoto: React.FC<HomeProps> = ({ setImage }) => {
 
   const webcamRef = useRef<Webcam | null>(null);
 
