@@ -15,7 +15,24 @@
         pkgs,
         self',
         ...
-      }: {
+      }: let
+        cyberfood = pkgs.python3Packages.buildPythonPackage {
+          name = "cyberfood";
+          version = "0.1.0";
+          pyproject = true;
+          src = ./backend;
+
+          dependencies = with pkgs.python3Packages; [
+            flask
+            openai
+            flit
+          ];
+
+          nativeCheckInputs = with pkgs.python3Packages; [
+            pytest
+          ];
+        };
+      in {
         # Usually these are not needed for my most basic projects
         # packages.default = pkgs.hello;
         # apps.default = {
@@ -25,14 +42,23 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             pyright # language server
-            yarn
             (python3.withPackages (ps:
               with ps; [
                 isort # sort imports
                 flake8 # formatting
                 black # formatting
+                # Dev Packages
+                pytest
+                flask
+                requests
+                openai
               ]))
           ];
+          shellHook = ''
+            set -a
+            source .env
+            set +a
+          '';
         };
       };
     };
