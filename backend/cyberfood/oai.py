@@ -137,8 +137,6 @@ def identify_object(image: str) -> Product:
     Product:
     """
 
-    img_type = "image/jpeg"
-
     response = client.beta.chat.completions.parse(
         model="gpt-4o-mini",
         messages=[
@@ -148,7 +146,7 @@ def identify_object(image: str) -> Product:
                     {"type": "text", "text": prompt},
                     {
                         "type": "image_url",
-                        "image_url": {"url": f"data:{img_type};base64,{image}"},
+                        "image_url": {"url": image},
                     },
                 ],
             }

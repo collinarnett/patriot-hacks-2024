@@ -51,6 +51,7 @@
                 pytest
                 flask
                 requests
+                flask-cors
                 openai
               ]))
           ];
