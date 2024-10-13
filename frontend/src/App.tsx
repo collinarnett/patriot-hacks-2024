@@ -4,8 +4,8 @@ import Webcam from "react-webcam";
 import "./App.css";
 
 const videoConstraints = {
-  width: 1280,
-  height: 720,
+  width: 720,
+  height: 1280,
   facingMode: "environment",
 };
 
@@ -33,7 +33,19 @@ function App() {
         <div>
           <img src={imgSrc} />
           <div>
-            <button onClick={() => setImgSrc(null)}>Clear</button>
+            <button
+              className="mt-5 relative inline-flex items-center justify-center px-4 py-2 text-sm font-semibold uppercase tracking-wider 
+  text-cyan-400 bg-black border-2 border-pink-500 rounded-md shadow-md 
+  hover:bg-pink-500 hover:text-black transition-all duration-300 
+  before:absolute before:inset-0 before:bg-pink-500 before:blur-sm before:opacity-25 before:transition-opacity before:duration-300 
+  after:absolute after:inset-0 after:bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-600 
+  after:-z-10 after:rounded-md after:blur-md after:scale-105 after:transition-transform after:duration-300
+  active:scale-95"
+              style={{ fontFamily: "Orbitron, sans-serif" }}
+              onClick={() => setImgSrc(null)}
+            >
+              Clear
+            </button>
           </div>
           <div className="">
             <button
@@ -46,6 +58,7 @@ function App() {
               after:-z-20 after:scale-0 after:transition-transform after:duration-300 after:rounded-lg
               hover:after:scale-100 hover:before:scale-100 active:translate-y-1"
               onClick={submitImage}
+              style={{ fontFamily: "Orbitron, sans-serif" }}
             >
               Submit
             </button>
@@ -71,6 +84,7 @@ function App() {
               after:-z-20 after:scale-0 after:transition-transform after:duration-300 after:rounded-lg
               hover:after:scale-100 hover:before:scale-100 active:translate-y-1"
               onClick={capture}
+              style={{ fontFamily: "Orbitron, sans-serif" }}
             >
               CAPTURE
             </button>
