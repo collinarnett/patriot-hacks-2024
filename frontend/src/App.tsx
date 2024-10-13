@@ -24,6 +24,7 @@ function App() {
     if (imgSrc) {
       formData.append("image", imgSrc);
       navigate("/results", { state: formData });
+      console.log(formData)
     }
   };
 
