@@ -5,7 +5,7 @@ export default function Layout() {
   return (
     <>
       <Link to="/">
-        <img src={mainLogo} alt="logo" />
+        <img className="logo" src={mainLogo} alt="logo" />
       </Link>
       <Outlet />
     </>
