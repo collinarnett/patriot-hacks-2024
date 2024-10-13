@@ -17,7 +17,7 @@ def calculate_score(ingredients: list[NovaClassification]) -> float:
         elif ingredient.classification == Classification.ultraprocessed:
             total_weight += 2
 
-    return total_weight / len(ingredients) if ingredients else 0
+    return total_weight / 2 * len(ingredients)
 
 
 @bp.route("image", methods=["POST"])
