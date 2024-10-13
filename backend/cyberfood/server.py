@@ -22,12 +22,11 @@ def calculate_score(ingredients: list[NovaClassification]) -> float:
 
 @bp.route("image", methods=["POST"])
 def image():
+    # Access the image file
+    file_ = request.form["image"]
 
-    data = request.get_json()
-
-    # Decode the base64 string
-    img_b64_str = base64.b64decode(data["image"]).decode("utf-8")
-    product = oai.identify_object(img_b64_str)
+    # If you need the image in base64 format (optional, depending on your needs)
+    product = oai.identify_object(file_)
     if product:
         return {"name": product.name}
     else:
