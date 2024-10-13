@@ -1,16 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
+import mainLogo from "../assets/logo.png";
 
 export default function Layout() {
   return (
-    <div>
-      <header>
-        <nav>
-        </nav>
-      </header>
-        <main>
-          <Outlet />
-        </main>
-      <footer></footer>
-    </div>
+    <>
+      <Link to="/">
+        <img src={mainLogo} alt="logo" />
+      </Link>
+      <Outlet />
+    </>
   );
 }

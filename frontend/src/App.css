@@ -5,3 +5,11 @@
   padding: 0;
   text-align: center;
 }
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  #root {
+    max-width: 1280px;
+    padding: 2rem;
+  }
+}
