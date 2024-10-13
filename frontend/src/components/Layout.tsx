@@ -1,14 +1,17 @@
 import { Outlet, Link } from "react-router-dom";
+import mainLogo from "../assets/logo.png";
 
 export default function Layout() {
   return (
     <div>
       <header>
         <nav>
-          <Link to="/">Logo</Link>
+          <Link to="/">
+            <img src={mainLogo} alt="logo" />
+          </Link>
         </nav>
       </header>
-      <div className="flex items-center justify-center">
+      <div>
         <main>
           <Outlet />
         </main>
