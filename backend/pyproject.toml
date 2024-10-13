@@ -1,0 +1,20 @@
+[project]
+name = "cyberfood"
+version = "0.1.0"
+description = "The food app that lets you to speak to the future."
+dependencies = [
+    "flask",
+    "openai",
+    "requests",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.setuptools.package-data]
+cyberfood = ["*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
