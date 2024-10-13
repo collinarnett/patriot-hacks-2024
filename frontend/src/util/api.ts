@@ -3,14 +3,10 @@ export const apiService = {
     
     getName: async (formData: FormData): Promise<string | null> => {
         try {
-            const response = await fetch('YOUR_SERVER_ENDPOINT', {
+            const response = await fetch('http://192.168.1.164:3000/api/image', {
             method: 'POST',
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
             body: formData,
             });
-
             if (response.ok) {
             const result = await response.json();
             return JSON.stringify(result);
@@ -26,12 +22,12 @@ export const apiService = {
 
     getIngredients: async (name: string): Promise<string | null> => {
         try {
-            const response = await fetch('YOUR_SERVER_ENDPOINT', {
+            const response = await fetch('http://192.168.1.164:3000/api/ingredients', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             },
-            body: name,
+            body: JSON.stringify({ name: name }),
             });
     
             if (response.ok) {
@@ -49,8 +45,11 @@ export const apiService = {
 
     getChat: async (name: string, ingredients: string): Promise<string | null> => {
         try {
-            const response = await fetch('YOUR_SERVER_ENDPOINT', {
+            const response = await fetch('http://192.168.1.164:3000/api/classification', {
             method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify({
                 name: name,
                 ingredients: ingredients
